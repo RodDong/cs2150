@@ -1,0 +1,65 @@
+C011	000	start			
+0000	001	n			
+0000	002	int index			
+0001	003	int 1			
+4000	004	int 4000			
+0045	005	int 45			
+3000	006	int 3000			
+0000	007	memory block			
+0000	008	memory block			
+0000	009	memory block			
+0000	00A	memory block			
+0000	00B	memory block			
+0000	00C	memory block			
+0000	00D	memory block			
+0000	00E	memory block			
+0000	00F	memory block			
+0000	010	memory block			
+1000	011	read length			
+4001	012	store n			
+3001	013	load n	loop	exit if (i>=n)	
+6002	014	sub index			
+E021	015	exit 	jmpl		
+D021	016	exit 	jmpe		
+3004	017	load 4000 in to accumulator			
+5002	018	add index to the accumulator			
+5005	019	add 7 to the accumulator			
+401C	01A	store command at line 1C			
+1000	01B	read element			
+0000	01C	command			
+3002	01D	load index			
+5003	01E	index++			
+4002	01F	store index			
+C013	020	jump to loop start			
+3002	021	load index			
+6002	022	index-index			
+4002	023	index=0			
+3001	024	load n	loop	exit if (i>=n)	
+6002	025	sub index			
+E032	026	exit 	jmpl		
+D032	027	exit 	jmpe		
+3002	028	load index			
+5006	029	add 3000 to the accumulator			
+5005	02A	add number 36 to the accumulator			
+402C	02B	store command to 02C			
+0000	02C	command			
+1800	02D	print the number			
+3002	02E	load index 			
+5003	02F	index ++			
+4002	030	store index			
+C024	031	jump to loop start			
+3002	032	load index	loop	exit if (i<=0)	
+E040	033	exit 	jmpl		
+D040	034	exit 	jmpe		
+3005	035	load number 36			
+5002	036	add index to the accumulator			
+5006	037	add 3000 to form the command			
+6003	038	subtract 1 from accumulator			
+403A	039	store the command to 03A			
+0000	03A	command			
+1800	03B	print the element			
+3002	03C	load index			
+6003	03D	index--			
+4002	03E	store index			
+C032	03F	jump to loop start			
+0000	040	halt			

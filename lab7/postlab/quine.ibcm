@@ -1,0 +1,21 @@
+C007	000	jump to start	skip the variables	
+0014	001	int length		
+0000	002	leave space		
+3000	003	int 3000		
+0001	004	int 1		
+0000	005	leave space		
+0000	006	leave space		
+3001	007	load length	loop	exit if (count>=length)
+6015	008	length-counter		
+E014	009	jmpl	exit	
+D014	00A	jmpe	exit	
+3015	00B	load counter		
+5003	00C	add 3000 to accumulator		
+400E	00D	store command to 00E		
+0000	00E	command 		
+1800	00F	print		
+3015	010	load counter		
+5004	011	counter++		
+4015	012	store counter		
+C007	013	jump to start of the loop		
+0000	014	halt		

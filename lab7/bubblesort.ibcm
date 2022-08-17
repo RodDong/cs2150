@@ -1,0 +1,96 @@
+C00C	000	jump to start 	skip the variables 	
+0000	001	int index		
+0000	002	int temp1		
+0001	003	int 1		
+4000	004	int 4000		
+0060	005	int 60		
+3000	006	int 3000		
+000a	007	int 10(length)		
+0009	008	int j		
+6000	009	int 6000		
+0000	00A	int temp2		
+0000	00B	left empty		
+3007	00C	load length 	loop	exit if(index>=n)
+6001	00D	subtract index		
+E01A	00E	jmpl	exit	
+D01A	00F	jmpe	exit	
+3004	010	load 4000 in accumulator		
+5001	011	add index to the accumulator		
+5005	012	add constant to the accumulator		
+4015	013	store command at line 015		
+1000	014	read element		
+0000	015	command		
+3001	016	load index 		
+5003	017	index++		
+4001	018	store index 		
+C00C	019	jump to loop start		
+3001	01A	load index 		
+6001	01B	index-index		
+4001	01C	index=0		
+3007	01D	load length 	loop	exit if (int index>=n)
+6001	01E	subtract index		
+E04E	01F	jmpl	exit	
+D04E	020	jmpe	exit	
+3008	021	load j	loop	exit if (index >=j)
+6001	022	subtract index		
+E047	023	jmpl	exit 	
+D047	024	jmpe	exit 	
+3008	025	load j		
+5006	026	accumulator+3000		
+5005	027	accumulator+constant		
+4029	028	store command at line 029		
+0000	029	command load a[j]		
+4002	02A	temp1 = a[j]		
+3008	02B	load j		
+5006	02C	accumulator+3000		
+5005	02D	accumulator+constant		
+6003	02E	acummulator -1		
+4030	02F	store command at line 030		
+0000	030	command load a[j-1]		
+400A	031	store a[j-1] in temp2		
+300A	032	load temp2= a[j-1]		
+6002	033	subtract temp1		
+E043	034	jmpl	jump if (a[j-1]-a[j]=0)	
+D043	035	jmpe	jump if (a[j-1]-a[j]<0)	
+3008	036	load j		
+5004	037	accumulator + 4000		
+5005	038	acumulator +constant		
+403B	039	store command at line 03B		
+300A	03A	load temp2		
+0000	03B	command store temp2 at a[j]		
+3008	03C	load j		
+5004	03D	accumulator + 4000		
+5005	03E	acumulator +constant		
+6003	03F	accumulator -1		
+4042	040	store command at line 042		
+3002	041	load temp1 = a[j]		
+0000	042	command  store temp1 at a[j-1]		
+3008	043	load j		
+6003	044	j-1		
+4008	045	j=j-1		
+C021	046	jump to start of the second loop		
+3007	047	load length		
+6003	048	length-1		
+4008	049	store length-1 to j		
+3001	04A	load index 		
+5003	04B	index++		
+4001	04C	store index 		
+C01D	04D	jump back to start of the first loop		
+3001	04E	load index 		
+6001	04F	index-index		
+4001	050	index = 0		
+3007	051	load length	loop	exit if(index>10)
+6001	052	subtract index		
+E05F	053	jmpl	exit	
+D05F	054	jmpe	exit	
+3001	055	load index 		
+5005	056	add constant to the accumulator		
+5006	057	add3000 to the accumulator		
+4059	058	store command at line 059		
+0000	059	command to load element at index i		
+1800	05A	print element 		
+3001	05B	load index 		
+5003	05C	index++		
+4001	05D	store index 		
+C051	05E	jump to start of the loop		
+0000	05F	halt		

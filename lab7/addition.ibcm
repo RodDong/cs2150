@@ -1,0 +1,26 @@
+C007 000 jmp	start	skip around the variables
+0000 001 i		dw	0	int i
+0000 002 j		dw	0	int j
+0000 003 k	dw	0	int k
+0000 004			leave space
+0000 005			leave space
+0000 006			leave space
+1000 007 start 	read 	read value for i
+4001 008 store 	i
+1000 009 read 		read value for j
+4002 00A store	j
+1000 00B read		read value for k
+4003 00C store 	k
+3001 00D load	i	accumulator = i
+5002 00E	add	j	accumulator+=j
+5003 00F	add	k	accumulator+=k
+1800 010	print		print i+j+k
+D013 011	jmpe	xit	if accumulator == 0, goto line 13
+C007 012	jmp	loop	loops back to the start at line 7
+3001 013	load	i	accumulator = i
+1800 014	print		print i
+3002 015	load 	j	accumulator = j
+1800 016	print		print j
+3003 017	load 	k	accumulator = k
+1800 018	print 		print k
+0000 019	halt		terminate the program
